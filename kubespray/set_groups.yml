@@ -1,0 +1,36 @@
+- name: Configure groups
+  hosts: localhost
+
+  tasks:
+    - name: set fact
+      set_fact:
+        _ssh_bastion: "bastion-ssh"
+        _k8s_master: "k8s-master"
+        _k8s_node: "k8s-node"
+        _k8s_etcd: "k8s-etcd"
+        _k8s_cluster: "k8s-cluster"
+
+    - name: add instances to bastion
+      local_action: add_host hostname={{item}} groupname=bastion
+      with_items: "{{groups[_ssh_bastion]}}"
+      changed_when: false
+
+    - name: add instances to Master
+      local_action: add_host hostname={{item}} groupname=kube-master
+      with_items: "{{groups[_k8s_master]}}"
+      changed_when: false
+
+    - name: add instances to Node
+      local_action: add_host hostname={{item}} groupname=kube-node
+      with_items: "{{groups[_k8s_node]}}"
+      changed_when: false
+
+    - name: add instances to etcd
+      local_action: add_host hostname={{item}} groupname=etcd
+      with_items: "{{groups[_k8s_etcd]}}"
+      changed_when: false
+
+    - name: add instances to kube cluster
+      local_action: add_host hostname={{item}} groupname=k8s-cluster
+      with_items: "{{groups[_k8s_cluster]}}"
+      changed_when: false
