@@ -1,0 +1,13 @@
+- name: get floating ip
+  hosts: localhost
+  gather_facts: false
+  become: no
+
+  tasks:
+    - name: get LB FLoating IP
+      shell: scripts/floating.sh
+      register: floating_lb
+      changed_when: false
+
+    - debug:
+        msg: floating_lb is {{ hostvars['localhost']['floating_lb']['stdout'] }}

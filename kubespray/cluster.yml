@@ -2,6 +2,9 @@
 - include: set_groups.yml
   tags: always
 
+- include: get-floating-ip.yml
+  tags: always
+
 - hosts: localhost
   gather_facts: false
   become: no
