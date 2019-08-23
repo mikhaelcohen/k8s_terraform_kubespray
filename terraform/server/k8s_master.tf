@@ -6,7 +6,7 @@ resource "openstack_compute_instance_v2" "k8s_master" {
   flavor_name = "${var.flavor_k8s_master}"
   key_pair = "${var.key_name}"
   metadata {
-    host_groups = "k8s-master;k8s-cluster;k8s-etcd"
+    host_groups = "k8s-master;k8s-cluster"
   }
   network {
     port = "${element(openstack_networking_port_v2.k8s_master_admin_port.*.id, count.index)}"
