@@ -52,7 +52,7 @@ It will display you the floating IP and the Token to use to connect to the Dashb
 
 
 Next steps :
-* Connect K8S to Openstack API for Volume
+* Connect K8S to Openstack API for Volume --> Done 
 * Deploy EFK for logging within k8s
 * Deploy Grafana and Prometheus for supervision
-* Test traefik instead of nginx ingress 
+* Test traefik instead of nginx ingress
