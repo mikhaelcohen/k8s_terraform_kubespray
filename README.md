@@ -48,4 +48,11 @@ Go into `k8s_terraform_kubespray/templates/` :
 ./setup_k8s.sh
 ```
 
-It will display you the floating IP and the Token to use to connect to the Dashboard 
+It will display you the floating IP and the Token to use to connect to the Dashboard
+
+
+Next steps :
+* Connect K8S to Openstack API for Volume
+* Deploy EFK for logging within k8s
+* Deploy Grafana and Prometheus for supervision
+* Test traefik instead of nginx ingress 
