@@ -214,7 +214,12 @@ supplementary_addresses_in_ssl_keys: ["{{ hostvars['localhost']['floating_lb']['
 ## Set this variable to true to get rid of this issue
 volume_cross_zone_attachment: false
 # Add Persistent Volumes Storage Class for corresponding cloud provider ( OpenStack is only supported now )
-persistent_volumes_enabled: false
+persistent_volumes_enabled: true
+storage_classes:
+  - name: standard
+    is_default: true
+    parameters:
+      availability: prd2
 
 ## Container Engine Acceleration
 ## Enable container acceleration feature, for example use gpu acceleration in containers
