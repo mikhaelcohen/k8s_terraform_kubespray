@@ -1,7 +1,7 @@
 #!/bin/sh
 
 HOME_KUBESPRAY=/Users/mikhael/Documents/1_GIT/CW/formation/k8s_terraform_kubespray/kubespray
-TARGET=/Users/mikhael/Documents/1_GIT/CW/formation/k8s_terraform_kubespray/templates
+TARGET=/Users/mikhael/Documents/1_GIT/CW/formation/k8s_terraform_kubespray/usage
 
 lb_vip_node=$(neutron lb-vip-list | grep k8s-node-vip | awk -F "|" '{print $4}'| sed 's/ //g')
 floating_node=$(neutron floatingip-list | grep $lb_vip_node | awk -F '|' '{print $4}' | sed 's/ //g')
