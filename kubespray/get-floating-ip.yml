@@ -11,3 +11,11 @@
 
     - debug:
         msg: floating_lb is {{ hostvars['localhost']['floating_lb']['stdout'] }}
+
+    - name: get VIP IP
+      shell: scripts/vip_lb.sh
+      register: vip_lb
+      changed_when: false
+
+    - debug:
+        msg: vip_lb is {{ hostvars['localhost']['vip_lb']['stdout'] }}

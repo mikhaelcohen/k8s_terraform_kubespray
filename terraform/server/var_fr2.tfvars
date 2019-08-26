@@ -1,15 +1,15 @@
 ##### Variables network Admin #####
-id_network_admin = "d11a7425-51bb-41e4-9048-253ce0bc6a8c"
-id_subnet_admin = "ab7eca79-d970-4b5d-a5b9-38bdb7fd40df"
+id_network_admin = "ee85e460-8243-4bfa-8cc2-935237e6fada"
+id_subnet_admin = "6bb4a754-9148-4ea2-b3bc-664383d8040c"
 
 # ##### Variables network Data #####
 # id_network_data = "867ca29a-7ae8-4fa9-af43-9593b1e2fdef"
 # id_subnet_data = "17ee42ca-1195-45fb-992c-db6753cd3b3b"
 
 ###### Variables security group ######
-data_sg = "fca45bbd-ad7b-492c-8e79-ba1562fcce3c"
-admin_sg = "5465d874-231c-457c-a2a5-3d8f0687cff9"
-etcd_sg = "4a9d1025-d83a-43b2-91eb-f9dc152681d1"
+data_sg = "f481d2fb-a158-44cc-8788-20d4c6e0b60b"
+admin_sg = "04f4f057-bbb7-4292-a705-b49cdc606243"
+etcd_sg = "f15aee13-0d74-41f9-a668-43a3005111d3"
 ###### Variables Instances ######
 image_name = "CentOS 7.6"
 key_name = "cwpn6480"

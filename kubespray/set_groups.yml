@@ -1,5 +1,6 @@
 - name: Configure groups
   hosts: localhost
+  become: no
 
   tasks:
     - name: set fact

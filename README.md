@@ -39,3 +39,13 @@ Go into `k8s_terraform_kubespray/kubespray/` :
 ```
 ansible-playbook --flush-cache -i inventory/mycluster/ --become --become-user=root cluster.yml
 ```
+
+## K8s Usage
+
+
+Go into `k8s_terraform_kubespray/templates/` :
+```
+./setup_k8s.sh
+```
+
+It will display you the floating IP and the Token to use to connect to the Dashboard 

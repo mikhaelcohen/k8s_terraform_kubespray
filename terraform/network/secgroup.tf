@@ -193,6 +193,26 @@ resource "openstack_networking_secgroup_rule_v2" "icmp_data_sg2" {
   security_group_id = "${openstack_networking_secgroup_v2.data_sg.id}"
 }
 
+resource "openstack_networking_secgroup_rule_v2" "flannel_data_sg1" {
+  direction         = "ingress"
+  ethertype         = "IPv4"
+  protocol          = "udp"
+  port_range_min    = 8285
+  port_range_max    = 8285
+  remote_ip_prefix  = "0.0.0.0/0"
+  security_group_id = "${openstack_networking_secgroup_v2.data_sg.id}"
+}
+
+resource "openstack_networking_secgroup_rule_v2" "flannel_data_sg2" {
+  direction         = "ingress"
+  ethertype         = "IPv4"
+  protocol          = "udp"
+  port_range_min    = 8472
+  port_range_max    = 8472
+  remote_ip_prefix  = "0.0.0.0/0"
+  security_group_id = "${openstack_networking_secgroup_v2.data_sg.id}"
+}
+
 ## ETCD Sec Group
 resource "openstack_networking_secgroup_v2" "etcd_sg" {
   name        = "etcd_sg"
