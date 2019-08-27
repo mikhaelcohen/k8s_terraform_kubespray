@@ -1,0 +1,25 @@
+---
+
+- name: Ensure that user manifests directory exists
+  file:
+    path: "{{ kubernetes_user_manifests_path }}/kubernetes"
+    state: directory
+    recurse: yes
+  tags: [cinder_nodes]
+
+- name: Apply kube-proxy nodeselector
+  block:
+    - name: Copy avalabilty template
+      template:
+        src: label-availability-cinder-patch.json.j2
+        dest: "{{ kubernetes_user_manifests_path }}/label-availability-cinder-patch.json"
+
+    - name: cinder-node | Patch all node to update availability
+      shell: "{{ bin_dir }}/kubectl --kubeconfig {{ kube_config_dir }}/admin.conf patch node {{ item }} -p '{\"metadata\":{\"labels\":{\"failure-domain.beta.kubernetes.io/zone\":\"{{ availability_cinder }}\"}}}'"
+      with_items:
+        - "{{ groups['kube-node'] }}"
+      failed_when: false
+      delegate_to: "{{ groups['kube-master']|first }}"
+      run_once: true
+      ignore_errors: yes
+  tags: cinder_nodes

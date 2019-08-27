@@ -54,7 +54,8 @@ loadbalancer_apiserver_healthcheck_port: 8081
 ## Note: The 'external' cloud provider is not supported.
 ## TODO(riverzhang): https://kubernetes.io/docs/tasks/administer-cluster/running-cloud-controller/#running-cloud-controller-manager
 cloud_provider: openstack
-
+## MCO : Add to bypass bug of no host match for volume attachement (default 'nova')
+availability_cinder: "prd2"
 ## Set these proxy values in order to update package manager and docker daemon to use proxies
 # http_proxy: ""
 # https_proxy: ""
