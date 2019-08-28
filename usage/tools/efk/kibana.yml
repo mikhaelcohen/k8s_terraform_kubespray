@@ -23,10 +23,10 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-  - http:
+  - host: kibana.k8smikhael.com
+    http:
       paths:
-        - path: /kibana
-          backend:
+        - backend:
             serviceName: kibana
             servicePort: 80
 ---
@@ -58,7 +58,5 @@ spec:
         env:
           - name: ELASTICSEARCH_URL
             value: http://elasticsearch:9200
-          - name: SERVER_BASEPATH
-            value: /kibana
         ports:
         - containerPort: 5601
