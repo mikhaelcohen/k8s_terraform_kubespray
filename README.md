@@ -1,6 +1,22 @@
 # k8s_terraform_kubespray
 K8s deployement on Openstack with  kubespray
 
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [k8s_terraform_kubespray](#k8sterraformkubespray)
+	- [Infra Deployement](#infra-deployement)
+		- [Network Deployement](#network-deployement)
+		- [Servers Deployement](#servers-deployement)
+	- [K8s Deployement](#k8s-deployement)
+	- [K8s Usage](#k8s-usage)
+	- [Tools](#tools)
+		- [EFK](#efk)
+		- [Prometheus](#prometheus)
+		- [Grafana](#grafana)
+	- [Next steps](#next-steps)
+
+<!-- /TOC -->
+
 ## Infra Deployement
 
 ### Network Deployement
@@ -148,7 +164,7 @@ Go into `usage/tools/monitoring/prometheus`. Grafana will be in the same namespa
 
  6. Check the in prometheus and Kubernetes dashboard that you have all your node/master information
 
-## Next steps :
+## Next steps
 * Connect K8S to Openstack API for Volume --> Done
 * Deploy EFK for logging within k8s --> Done
 * Deploy Grafana and Prometheus for supervision --> Done
